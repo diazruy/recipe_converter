@@ -20,7 +20,7 @@ describe Parser do
         subject(:ingredient){ recipe.ingredients.first }
 
         its(:name){ should eq('Ingredient Name') }
-        its(:amount){ should eq(1) }
+        its(:amount){ should eq('1') }
         its(:notes){ should eq('Ingredient Notes') }
       end
     end

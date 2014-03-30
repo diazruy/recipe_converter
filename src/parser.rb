@@ -15,8 +15,11 @@ class Parser
   def build_recipe
     @recipe.name = name
     @recipe.directions = directions
-    ingredients.each do |ingredient|
+    ingredients.each do |ingredient_xml|
       ingredient = Ingredient.new
+      ingredient.name = ingredient_xml.css('IngredientName').text
+      ingredient.notes = ingredient_xml.css('IngredientNotes').text
+      ingredient.amount = ingredient_xml.css('IngredientAmount').text
 
       @recipe.ingredients << ingredient
     end
