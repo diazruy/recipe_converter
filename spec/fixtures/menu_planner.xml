@@ -1,0 +1,21 @@
+<ParseRecipeResponse>
+  <ParseRecipeResult>
+    <Name>Recipe Name</Name>
+    <Directions>Recipe Directions</Directions>
+    <Notes>Add nuts/choc chips, etc.</Notes>
+    <siteName>Eat Like a Dino</siteName>
+    <Servings>1</Servings>
+    <PrepTime></PrepTime>
+    <CookTime></CookTime>
+    <Url></Url>
+    <Ingredients>
+      <ParsedIngredient>
+        <IngredientAmount>1</IngredientAmount>
+        <IngredientName>Ingredient Name</IngredientName>
+        <IngredientNotes>Ingredient Notes</IngredientNotes>
+        <IngredientGroupName>(null)</IngredientGroupName>
+        <IngredientIsGroup>0</IngredientIsGroup>
+      </ParsedIngredient>
+    </Ingredients>
+  </ParseRecipeResult>
+</ParseRecipeResponse>
