@@ -1,3 +1,4 @@
+require 'json'
 require_relative '../src/parser'
 describe Parser do
   let(:file){ File.open('./spec/fixtures/menu_planner.xml') }
