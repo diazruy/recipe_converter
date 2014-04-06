@@ -7,7 +7,7 @@ class RecipeMailFinder
   end
 
   def all
-    mail.search(has: :attachment, from: 'maracdiaz@gmail.com', body: "Here is the recipe for")
+    mail.search(has: :attachment, from: ENV['FROM_EMAIL'], body: "Here is the recipe for")
   end
 
   def each
