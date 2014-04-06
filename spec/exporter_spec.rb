@@ -19,11 +19,13 @@ describe Exporter do
 
       ingredient = Ingredient.new
       ingredient.name = "Ingredient 1"
+      ingredient.unit = "Ingredient Unit"
       ingredient.amount = "1"
       recipe.ingredients << ingredient
 
       ingredient = Ingredient.new
       ingredient.name = "Ingredient 2"
+      ingredient.unit = "Ingredient Unit"
       ingredient.amount = "2"
       recipe.ingredients << ingredient
 

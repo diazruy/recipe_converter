@@ -12,7 +12,7 @@ class FoodPlannerRecipePresenter
       'instructions' => CGI::escape(recipe.directions),
       'ingredients' => CGI::escape(ingredients),
       'tags' => '',
-      'yield' => '0',
+      'yield' => 0,
       'yieldunit' => 'null'
     }
   end
@@ -23,8 +23,9 @@ class FoodPlannerRecipePresenter
     recipe.ingredients.collect do |ingredient|
       [
         ingredient.amount,
+        ingredient.unit, # Unit
         ingredient.name,
-        nil
+        ingredient.notes # Notes
       ].join('##')
     end.join("\n")
   end

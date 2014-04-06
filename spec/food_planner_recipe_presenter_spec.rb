@@ -29,7 +29,7 @@ describe FoodPlannerRecipePresenter do
     end
 
     it "URL escapes the ingredients with ## delimiters" do
-      expect(json['ingredients']).to eq("1%23%23Ingredient+1%23%23%0A2%23%23Ingredient+2%23%23")
+      expect(json['ingredients']).to eq("1%23%23%23%23Ingredient+1%23%23%0A2%23%23%23%23Ingredient+2%23%23")
     end
 
     it "has tags" do

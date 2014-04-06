@@ -24,7 +24,7 @@ class Exporter
 
   def recipes_json
     @recipes.collect do |recipe|
-      FoodPlannerRecipePresenter.new(recipe).to_json
+      {"id" => 1}.merge( FoodPlannerRecipePresenter.new(recipe).to_json)
     end
   end
 end
