@@ -1,3 +1,5 @@
+require_relative '../src/recipe'
+require_relative '../src/ingredient'
 require_relative '../src/exporter'
 
 describe Exporter do
@@ -29,6 +31,7 @@ describe Exporter do
       ingredient.amount = "2"
       recipe.ingredients << ingredient
 
+      exporter.add(recipe)
       exporter.add(recipe)
       expect(exporter.to_json).to eq(json)
     end
