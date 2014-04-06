@@ -1,6 +1,7 @@
 # Recipe Converter
 
-Convert from Menu Planner XML to Food Planner JSON
+Convert from [Menu Planner](https://itunes.apple.com/us/app/menu-planner/id304945491?mt=8&ign-mpt=uo%3D4) XML to
+[Food Planner](https://play.google.com/store/apps/details?id=dk.boggie.madplan.android) JSON
 
 ## Usage
 
