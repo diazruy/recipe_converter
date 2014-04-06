@@ -4,7 +4,19 @@ Convert from [Menu Planner](https://itunes.apple.com/us/app/menu-planner/id30494
 [Food Planner](https://play.google.com/store/apps/details?id=dk.boggie.madplan.android) JSON
 
 ## Usage
+ 
+1. Clone the repo
 
+    ```
+    git clone git@github.com/diazruy/recipe_converter.git
+    ```
+    
+1. Install gems
+
+    ```
+    bundle install
+    ```
+    
 1. Create a `.env` file with Gmail credentials:
 
     ```
