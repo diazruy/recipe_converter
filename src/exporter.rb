@@ -32,7 +32,6 @@ class Exporter
 
   def id(recipe)
     digest = Digest::SHA256.digest(recipe.name)
-    puts recipe.name
     hex = Digest.hexencode(digest)
     prefix = hex[0...8]
     Integer(prefix, 16)
