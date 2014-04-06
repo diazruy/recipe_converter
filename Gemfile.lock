@@ -1,6 +1,6 @@
 GIT
-  remote: git://github.com/nu7hatch/gmail.git
-  revision: 717f797c64355ae38c11503767dafa3822f37cc7
+  remote: git://github.com/manybots/gmail.git
+  revision: 785c1045ac71aa476886e833a16ccd336f1619b2
   specs:
     gmail (0.4.0)
       gmail_xoauth (>= 0.3.0)
