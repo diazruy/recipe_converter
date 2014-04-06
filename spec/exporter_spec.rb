@@ -13,27 +13,29 @@ describe Exporter do
   end
 
   describe "#to_json" do
+    def ingredient(name, amount)
+      Ingredient.new.tap do |ingredient|
+        ingredient.name = name
+        ingredient.unit = "Ingredient Unit"
+        ingredient.amount = amount
+      end
+    end
+
+    def recipe(name)
+      Recipe.new.tap do |recipe|
+        recipe.name = name
+        recipe.directions = "Recipe Instructions"
+        recipe.ingredients << ingredient("Ingredient 1", "1")
+        recipe.ingredients << ingredient("Ingredient 2", "2")
+      end
+    end
+
     let(:json){ JSON.load(File.open('./spec/fixtures/food_planner.json')) }
     it "exports the Food Planner JSON" do
-      recipe = Recipe.new
-      recipe.name = "Recipe Name"
-      recipe.directions = "Recipe Instructions"
-
-      ingredient = Ingredient.new
-      ingredient.name = "Ingredient 1"
-      ingredient.unit = "Ingredient Unit"
-      ingredient.amount = "1"
-      recipe.ingredients << ingredient
-
-      ingredient = Ingredient.new
-      ingredient.name = "Ingredient 2"
-      ingredient.unit = "Ingredient Unit"
-      ingredient.amount = "2"
-      recipe.ingredients << ingredient
-
-      exporter.add(recipe)
-      exporter.add(recipe)
-      expect(exporter.to_json).to eq(json)
+      exporter.add(recipe("Recipe Name 1"))
+      exporter.add(recipe("Recipe Name 2"))
+      parsed_json = JSON.parse(exporter.to_json)
+      expect(parsed_json).to eq(json)
     end
   end
 end
