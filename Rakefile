@@ -8,6 +8,7 @@ task :default, [:output_path] do |t, args|
   gmail = MailWrapper.new
   finder = RecipeMailFinder.new(gmail)
   exporter = Exporter.new
+  puts "Found #{finder.attachments.size} emails with recipes"
   finder.attachments.each do |recipe|
     recipe = Parser.new(recipe.to_s).recipe
     puts "Importing #{recipe.name}"
