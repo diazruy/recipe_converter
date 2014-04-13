@@ -7,7 +7,7 @@ class RecipeMailFinder
   end
 
   def all
-    mail.search(has: :attachment, from: ENV['FROM_EMAIL'], body: "Here is the recipe for")
+    @all ||= mail.search(has: :attachment, from: ENV['FROM_EMAIL'], body: "Here is the recipe for")
   end
 
   def each
@@ -18,7 +18,7 @@ class RecipeMailFinder
 
   def attachments
     collect do |email|
-      email.message.attachments[0].body
-    end
+      email.message.attachments[0].body unless email.message.attachments.empty?
+    end.compact
   end
 end

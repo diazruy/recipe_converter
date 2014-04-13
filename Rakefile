@@ -7,6 +7,7 @@ desc "Download emails with MenuPlanner recipes and export as FoodPlanner file"
 task :default, [:output_path] do |t, args|
   gmail = MailWrapper.new
   finder = RecipeMailFinder.new(gmail)
+  puts "Found #{finder.all.size} emails"
   exporter = Exporter.new
   puts "Found #{finder.attachments.size} emails with recipes"
   finder.attachments.each do |recipe|
